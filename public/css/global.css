@@ -6,7 +6,7 @@ html {
 }
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 80px;
+  padding-bottom: 80px;
   /* Required padding for navbar fixed top */
   padding-top: 50px;
 }
