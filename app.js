@@ -21,14 +21,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 /****************** routes ********************************/
 
 var index = require('./routes/index');
-// var about = require('./routes/about')
+var about = require('./routes/about')
 // var members = require('./routes/members'); 
-// var contact = require('./routes/contact');
+var contact = require('./routes/contact');
 
 app.use('/', index);
-// app.use('/about', about);
+app.use('/about', about);
 // app.use('/members', members);
-// app.use('/contact', contact);
+app.use('/contact', contact);
 
 // start server
 app.listen(appEnv.port, '0.0.0.0', function() {
