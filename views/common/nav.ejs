@@ -31,10 +31,10 @@
             </li>
           </ul>
         </li>
-        <li class="dropdown">
+        <li class="dropdown <%= typeof previous != 'undefined' ? previous : '' %>">
           <a href="" class="dropdown-toggle" data-toggle="dropdown">Previous Years <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li class="<%= typeof delegates != 'undefined' ? delegates : '' %>">
+            <li class="<%= typeof sixteen != 'undefined' ? sixteen : '' %>">
               <a href="/2016">2016</a>
             </li>
           </ul>

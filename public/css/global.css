@@ -38,7 +38,7 @@ header.carousel .fill {
 /* Responsive Styles */
 
 @media(max-width:991px) {
-  .customer-img,
+  .gallery-img,
   .img-related {
     margin-bottom: 30px;
   }
@@ -69,14 +69,26 @@ header.carousel .fill {
   padding-top: 20px;
 }
 
+.spacer {
+  margin-top: 80px;
+}
+
 /* Spacing Styles */
 
 .intro-section {
   margin-top: 80px;
 }
 
+.minor-section {
+  margin-top: 50px;
+}
+
 .section {
   margin-top: 100px;
+}
+
+.major-section {
+  margin-top: 150px;
 }
 
 .panel-btn {
@@ -86,6 +98,32 @@ header.carousel .fill {
 .sub-header {
   margin-top: 30px;
 }
+
+/*.break {
+  padding-top: 100px;
+}*/
+
+/* Speaker Styles */
+.speaker {
+  text-align:center;
+  margin-bottom: 20px;
+}
+
+.speaker img {
+  margin:0 auto;
+  border:7px solid #fff;
+}
+
+.speaker h4 { 
+  margin-top:0px;
+  margin-bottom:0;
+  text-transform:none;
+}
+
+.speaker p {
+  margin-top:0
+}
+
 
 /* Hover Effects court. https://miketricking.github.io/dist/ */
 

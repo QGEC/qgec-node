@@ -24,11 +24,14 @@ var index = require('./routes/index');
 var about = require('./routes/about')
 // var members = require('./routes/members'); 
 var contact = require('./routes/contact');
+var sixteen = require('./routes/2016');
+
 
 app.use('/', index);
 app.use('/about', about);
 // app.use('/members', members);
 app.use('/contact', contact);
+app.use('/2016', sixteen);
 
 // start server
 app.listen(appEnv.port, '0.0.0.0', function() {
