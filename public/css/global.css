@@ -260,3 +260,8 @@ header.carousel .fill {
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
 }
+
+.thumbnail {
+    border: 0 none !important;
+    box-shadow: none;
+}
