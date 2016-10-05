@@ -39,7 +39,6 @@ header.carousel .fill {
 /* Home Page */
 
 .emphasis {
-  background-image: url("../img/delegates2.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; 
@@ -52,7 +51,19 @@ header.carousel .fill {
   display: inline-block;
   vertical-align: middle;
   line-height: normal;
+}
+
+.emphasis.delegates {
+  background-image: url("../img/delegates2.jpg");
   color: #fff;
+}
+
+.emphasis.speakers {
+  background-image: url("../img/speaker.jpg");
+}
+
+.emphasis.partners {
+  background-image: url("../img/partner.jpg");
 }
 
 #quote-carousel {
