@@ -1,5 +1,7 @@
 /* global.css for QGEC-node
 -------------------------------------------------- */
+@import url('fonts.css');
+
 html {
   position: relative;
   min-height: 100%;
@@ -9,6 +11,8 @@ body {
   padding-bottom: 80px;
   /* Required padding for navbar fixed top */
   padding-top: 50px;
+  /* Color for spons & speaker pckgs */
+  background-color: #f2f3f9;
 }
 
 /* Typography */
@@ -16,6 +20,123 @@ body {
 a {
   text-decoration: none;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: bebasNeue, "Times New Roman", serif;
+  letter-spacing: 2px;
+}
+
+/* Used on home page for slogan */
+h1.slogan {
+  font-size: 55px; 
+  letter-spacing: 3px;
+}
+
+.btn {
+  font-family: "Georgia", serif;
+  font-style: italic;
+}
+
+/* Navbar */
+.navbar-qgec {
+  background-color: #121215;
+  border-color: #121215;
+  font-family: basicTitle, "Times New Roman", serif;
+  letter-spacing: 4px;
+  font-size: 1.2em;
+}
+.navbar-qgec .navbar-brand {
+  font-size: 1.4em;
+  color: #777;
+}
+.navbar-qgec .navbar-brand:hover,
+.navbar-qgec .navbar-brand:focus {
+  color: #5E5E5E;
+}
+/* link */
+.navbar-qgec .navbar-nav > li > a {
+  color: #fff;
+}
+.navbar-qgec .navbar-nav > li > a:hover,
+.navbar-qgec .navbar-nav > li > a:focus {
+  color: #cc5b66;
+}
+.navbar-qgec .navbar-nav > .active > a, 
+.navbar-qgec .navbar-nav > .active > a:hover, 
+.navbar-qgec .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: #cc5b66;
+}
+.navbar-qgec .navbar-nav > .open > a, 
+.navbar-qgec .navbar-nav > .open > a:hover, 
+.navbar-qgec .navbar-nav > .open > a:focus {
+  color: #cc5b66;
+  background-color: #fff;
+}
+/* caret */
+.navbar-qgec .navbar-nav > .dropdown > a .caret {
+  border-top-color: #cc5b66;
+  border-bottom-color: #cc5b66;
+}
+.navbar-qgec .navbar-nav > .dropdown.active > a .caret,
+.navbar-qgec .navbar-nav > .dropdown.active > a:hover .caret,
+.navbar-qgec .navbar-nav > .dropdown.active > a:focus .caret {
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+}
+.navbar-qgec .navbar-nav > .dropdown > a:hover .caret,
+.navbar-qgec .navbar-nav > .dropdown > a:focus .caret {
+  border-top-color: #cc5b66;
+  border-bottom-color: #cc5b66;
+}
+.navbar-qgec .navbar-nav > .dropdown.open > a:hover .caret,
+.navbar-qgec .navbar-nav > .dropdown.open > a:focus .caret {
+  border-top-color: #cc5b66;
+  border-bottom-color: #cc5b66;
+}
+.navbar-qgec .navbar-nav > .open > a .caret, 
+.navbar-qgec .navbar-nav > .open > a:hover .caret, 
+.navbar-qgec .navbar-nav > .open > a:focus .caret {
+  border-top-color: #cc5b66;
+  border-bottom-color: #cc5b66;
+}
+/* mobile version */
+.navbar-qgec .navbar-toggle {
+  border-color: #DDD;
+}
+.navbar-qgec .navbar-toggle:hover,
+.navbar-qgec .navbar-toggle:focus {
+  background-color: #cc5b66;
+}
+.navbar-qgec .navbar-toggle .icon-bar {
+  background-color: #CCC;
+}
+@media (max-width: 767px) {
+  .navbar-qgec .navbar-nav .open .dropdown-menu > li > a {
+    color: #cc5b66;
+  }
+  .navbar-qgec .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-qgec .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #cc5b66;
+  }
+}
+
+.navbar-nav > li {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:focus,
+.dropdown-menu > .active > a:hover {
+  background-color: #cc5b66;
+}
+.dropdown-menu > li > a:focus,
+.dropdown-menu > li > a:hover {
+  background-color: #cc5b66;
+  color: #fff;
+}
+
 
 /* Home Page Carousel */
 
@@ -97,7 +218,13 @@ header.carousel .fill {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 80px;
-  background-color: #f5f5f5;
+  background-color: #504646;
+  color: #B8AEAE;
+}
+
+.footer a {
+  color: #AEB8B8;
+  text-decoration: none;
 }
 
 .footer .container {
