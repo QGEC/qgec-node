@@ -208,9 +208,9 @@ header.carousel .fill {
   display: inline-block;
   vertical-align: middle;
   line-height: normal;
-  color: #cc5b66;
+  color: #f2f3f9;
   letter-spacing: 3px;
-  -webkit-text-stroke: 0.50px #f2f3f9;
+  -webkit-text-stroke: 2px #cc5b66;
   font-size: 80px;
 }
 
