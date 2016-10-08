@@ -2,13 +2,19 @@
 -------------------------------------------------- */
 @import url('fonts.css');
 
+/* Colors:
+cc5b66 : qgec red;
+f2f3f9 : qgec white;
+121215 : qgec black;
+*/
+
 html {
   position: relative;
   min-height: 100%;
 }
 body {
   /* Margin bottom by footer height */
-  padding-bottom: 80px;
+  padding-bottom: 200px;
   /* Required padding for navbar fixed top */
   padding-top: 50px;
   /* Color for spons & speaker pckgs */
@@ -32,9 +38,14 @@ h1.slogan {
   letter-spacing: 3px;
 }
 
+/* Components */
+
 .btn {
   font-family: "Georgia", serif;
   font-style: italic;
+}
+.page-header {
+  border-color: #cc5b66;
 }
 
 /* Navbar */
@@ -55,7 +66,7 @@ h1.slogan {
 }
 /* link */
 .navbar-qgec .navbar-nav > li > a {
-  color: #fff;
+  color: #f2f3f9;
 }
 .navbar-qgec .navbar-nav > li > a:hover,
 .navbar-qgec .navbar-nav > li > a:focus {
@@ -64,14 +75,14 @@ h1.slogan {
 .navbar-qgec .navbar-nav > .active > a, 
 .navbar-qgec .navbar-nav > .active > a:hover, 
 .navbar-qgec .navbar-nav > .active > a:focus {
-  color: #fff;
+  color: #f2f3f9;
   background-color: #cc5b66;
 }
 .navbar-qgec .navbar-nav > .open > a, 
 .navbar-qgec .navbar-nav > .open > a:hover, 
 .navbar-qgec .navbar-nav > .open > a:focus {
   color: #cc5b66;
-  background-color: #fff;
+  background-color: #f2f3f9;
 }
 /* caret */
 .navbar-qgec .navbar-nav > .dropdown > a .caret {
@@ -81,8 +92,8 @@ h1.slogan {
 .navbar-qgec .navbar-nav > .dropdown.active > a .caret,
 .navbar-qgec .navbar-nav > .dropdown.active > a:hover .caret,
 .navbar-qgec .navbar-nav > .dropdown.active > a:focus .caret {
-  border-top-color: #fff;
-  border-bottom-color: #fff;
+  border-top-color: #f2f3f9;
+  border-bottom-color: #f2f3f9;
 }
 .navbar-qgec .navbar-nav > .dropdown > a:hover .caret,
 .navbar-qgec .navbar-nav > .dropdown > a:focus .caret {
@@ -217,13 +228,17 @@ header.carousel .fill {
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 80px;
+  height: 200px;
   background-color: #504646;
   color: #B8AEAE;
 }
 
 .footer a {
   color: #AEB8B8;
+  text-decoration: none;
+}
+.footer a:hover {
+  color: #DFE9E9;
   text-decoration: none;
 }
 

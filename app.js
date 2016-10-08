@@ -22,14 +22,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 var index = require('./routes/index');
 var about = require('./routes/about')
-// var members = require('./routes/members'); 
+var apply = require('./routes/apply'); 
 var contact = require('./routes/contact');
 var sixteen = require('./routes/2016');
 
 
 app.use('/', index);
 app.use('/about', about);
-// app.use('/members', members);
+app.use('/apply', apply);
 app.use('/contact', contact);
 app.use('/2016', sixteen);
 
