@@ -6,6 +6,8 @@
 cc5b66 : qgec red;
 f2f3f9 : qgec white;
 121215 : qgec black;
+
+a34851 : qgec darker-red;
 */
 
 html {
@@ -23,13 +25,22 @@ body {
 
 /* Typography */
 
+a {
+  color: #cc5b66;
+}
+
 a:hover {
   text-decoration: none;
+  color: #a34851;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: bebasNeue, "Times New Roman", serif;
   letter-spacing: 2px;
+}
+
+p {
+  line-height: 2em;
 }
 
 /* Used on home page for slogan */
@@ -46,6 +57,48 @@ h1.slogan {
 }
 .page-header {
   border-color: #cc5b66;
+}
+
+.btn-qgec {
+  color: #fff;
+  background-color: #cc5b66;
+  border-color: #cc5b66;
+}
+.btn-qgec:hover,
+.btn-qgec:focus,
+.btn-qgec:active,
+.btn-qgec.active,
+.open .dropdown-toggle.btn-custom {
+  color: #fff;
+  background-color: #a34851;
+  border-color: #a34851;
+}
+.btn-qgec:active,
+.btn-qgec.active,
+.open .dropdown-toggle.btn-custom {
+  background-image: none;
+}
+.btn-qgec.disabled,
+.btn-qgec[disabled],
+fieldset[disabled] .btn-qgec,
+.btn-qgec.disabled:hover,
+.btn-qgec[disabled]:hover,
+fieldset[disabled] .btn-qgec:hover,
+.btn-qgec.disabled:focus,
+.btn-qgec[disabled]:focus,
+fieldset[disabled] .btn-qgec:focus,
+.btn-qgec.disabled:active,
+.btn-qgec[disabled]:active,
+fieldset[disabled] .btn-qgec:active,
+.btn-qgec.disabled.active,
+.btn-qgec[disabled].active,
+fieldset[disabled] .btn-qgec.active {
+  background-color: #8e3f47;
+  border-color: #8e3f47;
+}
+.btn-qgec .badge {
+  color: #fff;
+  background-color: #a34851;
 }
 
 /* Navbar */

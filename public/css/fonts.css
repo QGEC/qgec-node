@@ -2,10 +2,6 @@
   font-family: basicTitle;
   src: url("../fonts/BasicTitleFont.ttf") format('truetype');
 }
-@font-face {
-  font-family: basicTitle;
-  src: url("../fonts/BasicTitleFont.ttf") format('truetype');
-}
 
 @font-face {
   font-family: bebasNeue;
