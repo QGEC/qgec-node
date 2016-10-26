@@ -14,6 +14,8 @@ $(document).ready(function() {
     url: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Krafla_geothermal_power_station_wiki.jpg"
   }, {
     url: "https://www.tesla.com/tesla_theme/assets/img/gigafactory/hero.jpg"
+  }, {
+    url: "http://www.ekekeee.com/wp-content/uploads/2015/04/Chooz-A-nuclear-power-plant.jpg"
   }];
 
   images.sort(function() { return 0.5 - Math.random(); });
@@ -29,14 +31,14 @@ $(document).ready(function() {
   });
 
   $('#head-carousel').carousel({
-    interval: 3300,
+    interval: 4000,
     pause: "false"
   });
 
   //Set the carousel options
   $('#quote-carousel').carousel({
     pause: "true",
-    interval: 5500,
+    interval: 6500,
   });
 });
 
