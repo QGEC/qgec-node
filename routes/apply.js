@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+var db = require("../config/DB");
+
 router.get('/', function(req, res) {
   res.render('apply', {
     apply : 'active', // Add 'active' class to nav
@@ -12,6 +14,7 @@ router.get('/', function(req, res) {
 
 router.post('/taster', function(req, res) {
   console.log("Creating applicant " + req.body.firstName + " " + req.body.lastName);
+  db.createTasterApplicant(req.body.firstName, req.body.lastName, req.body.email, req.body.faculty, req.body.year, req.body.topics, req.body.comments);
   res.redirect('/thankyou');
 })
 
