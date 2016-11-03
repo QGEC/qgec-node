@@ -3,7 +3,15 @@ var router = express.Router();
 
 var db = require("../config/DB");
 
-router.get('/', function(req, res) {
+var auth = require("http-auth");
+var basic = auth.basic({
+    realm: "Web."
+  }, function (username, password, callback) { // Custom authentication method.
+    callback(username === "qgec" && password === "Energy1617");
+  }
+);
+
+router.get('/', auth.connect(basic), function(req, res) {
   db.getTasterApplicants(function(err, tasters) {
     res.render('admin', {
       title : "Admin Panel - QGEC",

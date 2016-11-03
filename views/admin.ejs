@@ -63,7 +63,7 @@
                   <td>
                     <form action="/admin/delete/taster" method="POST">
                       <input type="hidden" name="tasterID" value="<%= taster._id %>">
-                      <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                      <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item? This really, really cannot be undone.');">Delete</button>
                     </form>
                   </td>
                 </tr>
