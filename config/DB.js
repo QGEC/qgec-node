@@ -13,17 +13,21 @@ module.exports.createTasterApplicant = function(submitterFirstName, submitterLas
     comments: submitterComments
   });
 
+};
+
+module.exports.getTasterApplicants = function(next) {
+  models.Taster.find(function(err, applicants) {
+    if (err)
+      console.log(err);
+    return next(null, applicants);
+  });
+};
+
+module.exports.deleteTasterApplicant = function(tasterID) {
+  
+  models.Taster.findOneAndRemove({ _id: tasterID }, function(err) {
+    if (err) throw err;
+    console.log('Taster Applicant successfully deleted');
+  });
+
 }
-
-
-// module.exports.deleteIdea = function(ideaID) {
-  
-//   models.Idea.findOneAndRemove({ _id: ideaID }, function(err) {
-
-//     if (err) throw err;
-
-//     console.log('Idea successfully deleted!');
-  
-//   });
-
-// }

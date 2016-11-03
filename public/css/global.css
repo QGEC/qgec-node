@@ -580,3 +580,6 @@ header.carousel .fill {
   margin-right:-4px;
 }
 
+#year-error {
+  display: none !important;
+}

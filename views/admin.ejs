@@ -9,11 +9,73 @@
     <div class="row">
       <h1 class="page-header">Admin Panel</h1>
     </div>
-    <div class="row section text-center">
-      <div class="col-md-8 col-md-offset-2">
-        <p class="lead">
-          Dis da admin panel
-        </p>
+    <div class="row text-center">
+      <div class="col-md-12">
+        <h2>Fall Taster Applicants</h2>
+        <div class="table-container">
+          <table id="taster-catalog" class="table">
+            <thead>
+              <tr>
+                <th>
+                  Name (first,last)
+                </th>
+                <th>
+                  Email
+                </th>
+                <th>
+                  Faculty
+                </th>
+                <th>
+                  Year
+                </th>
+                <th>
+                  Topics
+                </th>
+                <th>
+                  Comments
+                </th>
+                <th>
+                  <!-- Delete -->
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <% taster.forEach(function(taster, i) { %>
+                <tr>
+                  <td>
+                    <%= taster.firstName %> <%= taster.lastName %>
+                  </td>
+                  <td>
+                    <%= taster.email %>
+                  </td>
+                  <td>
+                    <%= taster.faculty %>
+                  </td>
+                  <td>
+                    <%= taster.year %>
+                  </td>
+                  <td>
+                    <%= taster.topics %>
+                  </td>
+                  <td>
+                    <%= taster.comments %>
+                  </td>
+                  <td>
+                    <form action="/admin/delete/taster" method="POST">
+                      <input type="hidden" name="tasterID" value="<%= taster._id %>">
+                      <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                  </td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+        <% if (taster.length < 1) { %>
+          <div class="row text-center">
+            No Tasters Yet!
+          </div>
+        <% } %>
       </div>
     </div>
   </div>
