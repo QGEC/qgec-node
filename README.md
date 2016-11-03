@@ -4,6 +4,11 @@ The official Queen's Global Energy Conference website, implemented in Node.js.
 
 To be deployed to [www.qgec.ca]
 
+## Style Guideline
+
+- Spaces over tabs
+- 2 space indentation for all javascript and html
+
 ## Setup
 
 1. install node.js and npm
