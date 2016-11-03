@@ -5,7 +5,7 @@ router.get('/', function(req, res) {
     res.render('index', {
         home : 'active', // Add 'active' class to nav
         title : "Queen's Global Energy Conference",
-        description: "Welcome to the QGEC Homepage"
+        description: "QGEC, otherwise known as the Queen's Global Energy Conference, is a two day conference held in Kingston Ontario that informs its delegates of current trends in the energy industry through a series of speakers, presentations, and case study workshops."
     });
 });
 

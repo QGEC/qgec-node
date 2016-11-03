@@ -50,6 +50,10 @@ h1.slogan {
   font-size: 55px; 
   letter-spacing: 3px;
 }
+h1.sub-slogan {
+  font-size: 45px;
+  letter-spacing: 3px;
+}
 
 /* Components */
 

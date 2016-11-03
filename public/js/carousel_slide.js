@@ -1,21 +1,28 @@
 $(document).ready(function() {
 
+  var baseDir = "../img/carousel/";
   var images = [{
-    url: "https://energent.files.wordpress.com/2014/08/solar-panel.jpg"
+    url: baseDir + "solar.jpg"
   }, {
-    url: "https://www.ceati.com/images/dam.jpg"
+    url: baseDir + "dam.jpg"
   }, {
-    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Wolfe_island_wind_farm%2C_Kingston_Ontario_Canada_-_Laslovarga_%28157%29.JPG/1280px-Wolfe_island_wind_farm%2C_Kingston_Ontario_Canada_-_Laslovarga_%28157%29.JPG"
+    url: baseDir + "wolfe.jpg"
   }, {
-    url: "http://newsactivist.com/sites/default/files/tar_sands_0.jpg"
+    url: baseDir + "tar.jpg"
   }, {
-    url: "http://www.polarisenergy.com.my/upload/9213/images/ELECTRICITY%20POWER%20GENERATION.jpg"
+    url: baseDir + "power.jpg"
   }, {
-    url: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Krafla_geothermal_power_station_wiki.jpg"
+    url: baseDir + "geothermal.jpg"
   }, {
-    url: "https://www.tesla.com/tesla_theme/assets/img/gigafactory/hero.jpg"
+    url: baseDir + "nuclear.jpg"
   }, {
-    url: "http://www.ekekeee.com/wp-content/uploads/2015/04/Chooz-A-nuclear-power-plant.jpg"
+    url: baseDir + "solarfarm.jpg"
+  }, {
+    url: baseDir + "wind.jpg"
+  }, {
+    url: baseDir + "winteroil.jpg"
+  }, {
+    url: baseDir + "offshore.jpg"
   }];
 
   images.sort(function() { return 0.5 - Math.random(); });
