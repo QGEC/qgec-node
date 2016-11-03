@@ -6,7 +6,7 @@ var db = require("../config/DB");
 router.get('/', function(req, res) {
   res.render('apply', {
     apply : 'active', // Add 'active' class to nav
-    title : "Apply to QGEC - Delegates",
+    title : "Apply to QGEC Events",
     description : "Apply now to participate in one of the highest rated conferences at Queen's University.",
   });
 });
