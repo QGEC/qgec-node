@@ -9,6 +9,8 @@ var ejs = require('ejs');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var mongoose = require('mongoose');
+var session = require('express-session');
+var flash = require('connect-flash');
 
 // connect to database
 mongoose.connect('mongodb://qgec:Energy@ds143737.mlab.com:43737/qgec', function(err, db) {
@@ -28,6 +30,8 @@ app.set('view engine', 'ejs'); // set ejs as the rendering engine
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(session({ secret: 'ilovenergyenergyenergyenergienergyenergy'}));
+app.use(flash());
 
 /****************** routes ********************************/
 

@@ -12,8 +12,10 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "cfenv": "^1.0.3",
+    "connect-flash": "^0.1.1",
     "ejs": "^2.5.2",
     "express": "^4.14.0",
+    "express-session": "^1.14.2",
     "http-auth": "^3.0.1",
     "mongoose": "^4.6.6",
     "morgan": "^1.7.0",

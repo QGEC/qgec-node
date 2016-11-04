@@ -85,6 +85,14 @@
             </div>
           </div>
 
+          <% if (message.length > 0) { %>
+            <div class="form-group">
+              <div class="col-sm-offset-3 col-sm-6">
+                <div class="alert alert-danger"><%= message %></div>
+              </div>
+            </div>
+          <% } %>
+
           <div class="form-group minor-section">
             <div class="col-sm-offset-3 col-sm-9">
               <button type="submit" class="btn btn-qgec btn-block btn-lg"><i class="fa fa-ticket"></i> Register</button>
