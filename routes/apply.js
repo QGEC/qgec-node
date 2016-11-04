@@ -13,6 +13,9 @@ router.get('/', function(req, res) {
 
 
 router.post('/taster', function(req, res) {
+  if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null){
+    return res.json({"responseCode" : 1,"responseDesc" : "Please select captcha"});
+  }
   console.log("Creating applicant " + req.body.firstName + " " + req.body.lastName);
   db.createTasterApplicant(req.body.firstName, req.body.lastName, req.body.email, req.body.faculty, req.body.year, req.body.topics, req.body.comments);
   res.redirect('/thankyou');
