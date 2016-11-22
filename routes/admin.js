@@ -13,18 +13,23 @@ var basic = auth.basic({
 
 router.get('/', auth.connect(basic), function(req, res) {
 
-  
-
-  db.getTasterApplicants(function(err, tasters) {
-    db.countTasterApplicants(function(err, tCount){
-      res.render('admin', {
-        title : "Admin Panel - QGEC",
-        description: "Admin Panel",
-        taster : tasters,
-        tasterCount : tCount
+  db.getDelegateApplicants(function(err, delegates) {
+    db.countDelegateApplicants(function(err, dCount){
+      db.getTasterApplicants(function(err, tasters) {
+        db.countTasterApplicants(function(err, tCount){
+          res.render('admin', {
+            title         : "Admin Panel - QGEC",
+            description   : "Admin Panel",
+            taster        : tasters,
+            tasterCount   : tCount,
+            delegate      : delegates,
+            delegateCount : dCount
+          });
+        });
       });
     });
   });
+
 });
 
 router.post('/delete/taster', function(req, res) {

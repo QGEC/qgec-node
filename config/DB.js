@@ -1,6 +1,23 @@
 var models = require('./schemas');
 
+// DELEGATE METHODS
+module.exports.getDelegateApplicants = function(next) {
+  models.Delegate.find(function(err, applicants) {
+    if (err)
+      console.log(err);
+    return next(null, applicants);
+  });
+};
 
+module.exports.countDelegateApplicants = function(next) {
+  models.Delegate.count({}, function(err, count) {
+    if (err)
+      console.log(err);
+    return next(null, count);
+  });
+};
+
+// TASTER METHODS
 module.exports.createTasterApplicant = function(submitterFirstName, submitterLastName, submitterEmail, submitterFaculty, submitterYear, submitterTopics, submitterComments) {
   
   models.Taster.create({
