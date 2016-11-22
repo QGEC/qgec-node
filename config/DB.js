@@ -23,6 +23,14 @@ module.exports.getTasterApplicants = function(next) {
   });
 };
 
+module.exports.countTasterApplicants = function(next) {
+  models.Taster.count({}, function(err, count) {
+    if (err)
+      console.log(err);
+    return next(null, count);
+  });
+};
+
 module.exports.deleteTasterApplicant = function(tasterID) {
   
   models.Taster.findOneAndRemove({ _id: tasterID }, function(err) {

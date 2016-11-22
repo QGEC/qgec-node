@@ -12,11 +12,17 @@ var basic = auth.basic({
 );
 
 router.get('/', auth.connect(basic), function(req, res) {
+
+  
+
   db.getTasterApplicants(function(err, tasters) {
-    res.render('admin', {
-      title : "Admin Panel - QGEC",
-      description: "Admin Panel",
-      taster : tasters
+    db.countTasterApplicants(function(err, tCount){
+      res.render('admin', {
+        title : "Admin Panel - QGEC",
+        description: "Admin Panel",
+        taster : tasters,
+        tasterCount : tCount
+      });
     });
   });
 });
