@@ -6,13 +6,15 @@
   <% include common/nav %>
   <div class="container">
     <div class="row">
-      <h1 class="page-header text-center">Error!</h1>
+      <h1 class="page-header text-center">Oops!</h1>
     </div>
     <div class="row section text-center">
       <div class="col-md-8 col-md-offset-2">
-        <p class="">
-          That page does not exist. Go <a href="/">Home</a>.
-        </p>
+        <div class="alert alert-danger">
+          <p class="lead">
+            <%- message %>
+          </p>
+        </div>
       </div>
     </div>
   </div>

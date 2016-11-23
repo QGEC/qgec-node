@@ -1,8 +1,33 @@
 var models = require('./schemas');
 
 // DELEGATE METHODS
+module.exports.createDelegateApplicant = function(submitterFirstName, submitterLastName, submitterEmail, submitterFaculty, submitterMajor, submitterYear, submitterQ1, submitterQ2, count) {
+
+  var startAtOne = count + 1;
+
+  var newDelegate = models.Delegate({
+    firstName: submitterFirstName,
+    lastName: submitterLastName,
+    email: submitterEmail,
+    faculty: submitterFaculty,
+    major: submitterMajor,
+    year: submitterYear,
+    q1: submitterQ1,
+    q2: submitterQ2,
+    appOrder: startAtOne
+  });
+
+  newDelegate.save(function(err) {
+    if (err) 
+      console.log(err);
+
+    console.log('Delegate created!');
+  });
+
+};
+
 module.exports.getDelegateApplicants = function(next) {
-  models.Delegate.find(function(err, applicants) {
+  models.Delegate.find({}).sort({createdAt:'desc'}).exec(function(err, applicants) {
     if (err)
       console.log(err);
     return next(null, applicants);
@@ -20,6 +45,7 @@ module.exports.countDelegateApplicants = function(next) {
 // TASTER METHODS
 module.exports.createTasterApplicant = function(submitterFirstName, submitterLastName, submitterEmail, submitterFaculty, submitterYear, submitterTopics, submitterComments) {
   
+  // TODO for 2018 : refactor this code to look like the createDelegateApplicant code above (better method, as it error checks)
   models.Taster.create({
     firstName: submitterFirstName,
     lastName: submitterLastName,
@@ -33,7 +59,7 @@ module.exports.createTasterApplicant = function(submitterFirstName, submitterLas
 };
 
 module.exports.getTasterApplicants = function(next) {
-  models.Taster.find(function(err, applicants) {
+  models.Taster.find({}).sort({updatedAt: 'desc'}).exec(function(err, applicants) {
     if (err)
       console.log(err);
     return next(null, applicants);

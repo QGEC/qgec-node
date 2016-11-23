@@ -19,6 +19,9 @@
             <thead>
               <tr>
                 <th>
+                  #
+                </th>
+                <th>
                   Name (first,last)
                 </th>
                 <th>
@@ -28,16 +31,16 @@
                   Faculty
                 </th>
                 <th>
+                  Major
+                </th>
+                <th>
                   Year
                 </th>
                 <th>
-                  Topics
+                  Q1 (how'd hear bout QGEC)
                 </th>
                 <th>
-                  Comments
-                </th>
-                <th>
-                  Earlybird?
+                  Q2 (sust. resource)
                 </th>
                 <th>
                   Accepted?
@@ -50,6 +53,9 @@
             <tbody>
               <% delegate.forEach(function(delegate, i) { %>
                 <tr>
+                  <td>
+                    <%= delegate.appOrder %>
+                  </td>
                   <td>
                     <%= delegate.firstName %> <%= delegate.lastName %>
                   </td>
@@ -66,17 +72,10 @@
                     <%= delegate.year %>
                   </td>
                   <td>
-                    <%= delegate.q1 %> (How heard bout QGEC)
+                    <%= delegate.q1 %>
                   </td>
                   <td>
-                    <%= delegate.q2 %> (One renewable energy source)
-                  </td>
-                  <td>
-                    <% if (delegate.earlyBird) { %>
-                    <span class="success">Earlybird!</span>
-                    <% } else { %>
-                    Regular
-                    <% } %>
+                    <%= delegate.q2 %>
                   </td>
                   <td>
                     <%= delegate.accepted %>

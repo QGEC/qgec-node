@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var db = require("./DB");
 // var bcrypt = require('bcrypt-nodejs');
 
 var tasterSchema = mongoose.Schema({
@@ -9,6 +10,9 @@ var tasterSchema = mongoose.Schema({
   year      : String,
   topics    : String,
   comments  : String
+},
+{
+  timestamps : true
 });
 
 var delegateSchema = mongoose.Schema({
@@ -16,6 +20,7 @@ var delegateSchema = mongoose.Schema({
   lastName      : String,
   email : {
            type : String, // email validation is done on frontend
+      lowercase : true,
          unique : true  // only one application per email
   },
   faculty       : String,
@@ -23,12 +28,35 @@ var delegateSchema = mongoose.Schema({
   year          : String,
   q1            : String, // 2017: how did you hear about QGEC?
   q2            : String, // 2017: what one renewable energy source has greatest potential to offset CO2?
-  earlyBird     : Boolean, // first 30 applicants are early-birds
+  appOrder      : String, // first 15 applicants are early-birds
   accepted : {
            type : Boolean, // whether they've been invited to attend the conference or not
         default : false
   }
+},
+{
+  timestamps : true
 });
+
+// delegateSchema.pre('save', true, function(next, done) {
+//   console.log("pre save func firing");
+//   // check if earlybird - first 15 applicants
+//   if (this.isNew) {
+//     db.countDelegateApplicants(function(err, count){
+//       console.log("count is " + count);
+//       if (parseInt(count) < 16) {
+//         console.log("should be earlybird... eb before " + this.earlyBird);
+//         this.earlyBird = true;
+//         console.log("eb now " + this.earlyBird);
+//       } else {
+//         this.earlyBird = false;
+//       }
+//     });
+//   }
+
+//   next();
+//   setTimeout(done, 100);
+// });
 
 // methods ======================
 // generating a hash

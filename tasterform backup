@@ -1,0 +1,96 @@
+    <div class="row minor-section">
+      <div class="col-md-8 col-md-offset-2 well">
+        <img src="img/taster-banner.jpg" class="img-responsive">
+        <p class="pull-right">
+          Please fill out the form below to register for the Taster on November 24th.
+        </p>
+        <form action="/apply/taster" id="taster" method="POST" class="form-horizontal minor-section">
+          <% if (message.length > 0) { %>
+            <div class="form-group">
+              <div class="col-sm-12">
+                <div class="alert alert-danger lead text-center"><%= message %></div>
+              </div>
+            </div>
+          <% } %>
+          <div class="form-group">
+            <label for="firstName" class="col-sm-3 control-label">First Name :</label>
+            <div class="col-sm-9">
+              <input id="firstName" type="text" class="form-control" name="firstName" placeholder="First Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lastName" class="col-sm-3 control-label">Last Name :</label>
+            <div class="col-sm-9">
+              <input id="lastName" type="text" class="form-control" name="lastName" placeholder="Last Name">
+            </div>
+          </div>
+
+          <div class="form-group minor-section">
+            <label for="email" class="col-sm-3 control-label">Email :</label>
+            <div class="col-sm-9">
+              <input id="email" type="email" class="form-control" name="email" placeholder="Email">
+            </div>
+          </div>
+
+          <div class="form-group minor-section">
+            <label for="faculty" class="col-sm-3 control-label">Faculty / Program :</label>
+            <div class="col-sm-9">
+              <input id="faculty" type="text" class="form-control" name="faculty" placeholder="Faculty / Program">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="year" class="col-sm-3 control-label">Current Year of Studies :</label>
+            <div class="col-sm-9">
+              <label class="radio-inline">
+                <input type="radio" name="year" value="1"> 1 &nbsp;
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="year" value="2"> 2 &nbsp;
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="year" value="3"> 3 &nbsp;
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="year" value="4"> 4 &nbsp;
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="year" value="4+"> 4+ &nbsp;
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group minor-section">
+            <label for="topics" class="col-sm-3 control-label"><small>(Optional)</small><br>Interested Discussion Topics :</label>
+            <div class="col-sm-9">
+              <textarea id="topics" name="topics" form="taster" class="form-control" rows="3" style="resize:none" placeholder="I am interested in..."></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="comments" class="col-sm-3 control-label"><small>(Optional)</small><br>Additional Comments :</label>
+            <div class="col-sm-9">
+              <textarea id="comments" name="comments" form="taster" class="form-control" rows="2" style="resize:none" placeholder=""></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+              <div class="g-recaptcha" data-sitekey="6LcVJAsUAAAAAKvjr4sjTm64ozGRqrFxmK6SGb2O"></div>
+            </div>
+          </div>
+
+          <div class="form-group minor-section">
+            <div class="col-sm-offset-3 col-sm-9">
+              <button type="submit" class="btn btn-qgec btn-block btn-lg"><i class="fa fa-ticket"></i> Register</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="row section text-center">
+      <div class="col-md-8 col-md-offset-2">
+        <p class="lead">
+          Official registration for the 2017 conference has not yet begun. If you would like to register much in advance, or want to find out more about becoming a delegate, email us at <a href="mailto:conference@qgec.ca">conference@qgec.ca</a>.
+        </p>
+      </div>
+    </div>

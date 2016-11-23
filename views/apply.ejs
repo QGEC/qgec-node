@@ -14,11 +14,138 @@
     </div>
     <div class="row minor-section">
       <div class="col-md-8 col-md-offset-2 well">
+        <!-- CONF. DELEGATE APPLICATION -->
+        <img src="img/2017-banner.jpg" class="img-responsive">
+        <h2 class="text-center">2017 Delegate Application</h2>
+        <div class="col-sm-8 col-sm-offset-2 well well-sm">
+          <p class="text-center">
+            Please fill out the form below to apply to become a QGEC delegate.
+          </p>
+          <p class="text-center">
+            We will email you at a later time to confirm your delegacy. Once you have been selected, you will be required to submit payment to reserve your spot.
+          </p>
+          <ul class="fa-ul">
+            <li class="includes"><i class="fa-li fa fa-credit-card"></i>Regular: $150<br>
+              <small>First 15 Applicants (Early bird): $130</small>
+            </li>
+            <li class="includes"><i class="fa-li fa fa-calendar"></i>February 10th ~ 12th</li>
+            <li class="includes"><i class="fa-li fa fa-gift"></i>Includes: 2 Hotel Nights stay &amp; all Meals, Conference Activities</li>
+          </ul>
+        </div>
+        <form action="/apply/delegate" id="delegate" method="POST" class="form-horizontal minor-section">
+          <% if (message.length > 0) { %>
+            <div class="form-group">
+              <div class="col-sm-12">
+                <div class="alert alert-danger alert-dismissible lead">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <%- message %>
+                </div>
+              </div>
+            </div>
+          <% } %>
+          <div class="form-group">
+            <label for="firstName" class="col-sm-3 control-label">First Name :</label>
+            <div class="col-sm-9">
+              <input id="firstName" type="text" class="form-control" name="firstName" placeholder="First Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lastName" class="col-sm-3 control-label">Last Name :</label>
+            <div class="col-sm-9">
+              <input id="lastName" type="text" class="form-control" name="lastName" placeholder="Last Name">
+            </div>
+          </div>
+
+          <div class="form-group minor-section">
+            <label for="email" class="col-sm-3 control-label">Email :</label>
+            <div class="col-sm-9">
+              <input id="email" type="email" class="form-control" name="email" placeholder="Email">
+            </div>
+          </div>
+
+          <div class="form-group minor-section">
+            <label for="faculty" class="col-sm-3 control-label">Faculty / Program :</label>
+            <div class="col-sm-9">
+              <input id="faculty" type="text" class="form-control" name="faculty" placeholder="Faculty / Program">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="major" class="col-sm-3 control-label">Major :</label>
+            <div class="col-sm-9">
+              <input id="major" type="text" class="form-control" name="major" placeholder="Major">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="year" class="col-sm-3 control-label">Current Year of Studies :</label>
+            <div class="col-sm-9">
+              <label class="radio-inline">
+                <input type="radio" name="year" value="1"> 1 &nbsp;
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="year" value="2"> 2 &nbsp;
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="year" value="3"> 3 &nbsp;
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="year" value="4"> 4 &nbsp;
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="year" value="4+"> 4+ &nbsp;
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group minor-section">
+            <div class="col-sm-offset-3 col-sm-9">
+              <i>These following questions will help us better understand your level of interest for the conference.</i>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="q1" class="col-sm-3 control-label">How did you hear about QGEC? (under 300 characters) :</label>
+            <div class="col-sm-9">
+              <textarea id="q1" name="q1" form="delegate" class="form-control" rows="4" style="resize:none" placeholder="..."></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="q2" class="col-sm-3 control-label">In your opinion, what one renewable energy resource has the greatest potential to offset the CO2 emissions of the traditional methods of electricity generation? (under 1000 characters) :</label>
+            <div class="col-sm-9">
+              <textarea id="q2" name="q2" form="delegate" class="form-control" rows="12" style="resize:none" placeholder="..."></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+              <div class="g-recaptcha" data-sitekey="6LcVJAsUAAAAAKvjr4sjTm64ozGRqrFxmK6SGb2O"></div>
+            </div>
+          </div>
+
+          <div class="form-group minor-section text-center">
+            <div class="col-sm-offset-3 col-sm-9">
+              <button type="submit" class="btn btn-qgec btn-block btn-lg">Submit Application</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+<!-- TASTER APPLICATION -->
+<!--     <div class="row minor-section">
+      <div class="col-md-8 col-md-offset-2 well">
         <img src="img/taster-banner.jpg" class="img-responsive">
         <p class="pull-right">
           Please fill out the form below to register for the Taster on November 24th.
         </p>
         <form action="/apply/taster" id="taster" method="POST" class="form-horizontal minor-section">
+          <% if (message.length > 0) { %>
+            <div class="form-group">
+              <div class="col-sm-12">
+                <div class="alert alert-danger lead text-center"><%= message %></div>
+              </div>
+            </div>
+          <% } %>
           <div class="form-group">
             <label for="firstName" class="col-sm-3 control-label">First Name :</label>
             <div class="col-sm-9">
@@ -85,14 +212,6 @@
             </div>
           </div>
 
-          <% if (message.length > 0) { %>
-            <div class="form-group">
-              <div class="col-sm-offset-3 col-sm-6">
-                <div class="alert alert-danger"><%= message %></div>
-              </div>
-            </div>
-          <% } %>
-
           <div class="form-group minor-section">
             <div class="col-sm-offset-3 col-sm-9">
               <button type="submit" class="btn btn-qgec btn-block btn-lg"><i class="fa fa-ticket"></i> Register</button>
@@ -100,12 +219,15 @@
           </div>
         </form>
       </div>
-    </div>
+    </div> -->
 
     <div class="row section text-center">
       <div class="col-md-8 col-md-offset-2">
-        <p class="lead">
+    <!--<p class="lead">
           Official registration for the 2017 conference has not yet begun. If you would like to register much in advance, or want to find out more about becoming a delegate, email us at <a href="mailto:conference@qgec.ca">conference@qgec.ca</a>.
+        </p> -->
+        <p class="lead">
+          For any questions related to the application process, email us at <a href="mailto:conference@qgec.ca">conference@qgec.ca</a> or send us a <a href="https://www.facebook.com/officialQGEC/">Facebook message</a>, we're here to help.
         </p>
       </div>
     </div>
@@ -114,5 +236,6 @@
   <% include common/footer %>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.js"></script>
   <script type="text/javascript" src="js/tastervalidate.js"></script>
+  <script type="text/javascript" src="js/delegatevalidate.js"></script>
 </body>
 </html>
