@@ -6,11 +6,23 @@ var models = require('../config/schemas');
 var db = require("../config/DB");
 
 router.get('/', function(req, res) {
-  res.render('apply', {
-    apply : 'active', // Add 'active' class to nav
-    title : "Apply to QGEC Events",
-    description : "Apply now to participate in one of the highest rated conferences at Queen's University.",
-    message: req.flash('applyMessage')
+  db.countDelegateApplicants(function(err, dCount) {
+    if (err)
+      console.log(err);
+
+    var eb = false;
+
+    if (dCount < 15) {
+      eb = true;
+    }
+
+    res.render('apply', {
+      apply : 'active', // Add 'active' class to nav
+      title : "Apply to QGEC Events",
+      description : "Apply now to participate in one of the highest rated conferences at Queen's University.",
+      message : req.flash('applyMessage'),
+      earlyBird : eb
+    });
   });
 });
 
@@ -26,10 +38,10 @@ router.post('/taster', function(req, res) {
 });
 
 router.post('/delegate', function(req, res) {
-  // if (req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null){
-  //   req.flash('applyMessage', "Please verify that you're not a robot.");
-  //   res.redirect('/apply');
-  // } else {
+  if (req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null){
+    req.flash('applyMessage', "Please verify that you're not a robot.");
+    res.redirect('/apply');
+  } else {
     models.Delegate.findOne({ email: req.body.email}, function(err, exists) {
       if (err)
         console.log(err);
@@ -45,7 +57,7 @@ router.post('/delegate', function(req, res) {
         res.redirect('/thankyou');
       }
     });
-  // }
+  }
 });
 
 module.exports = router;

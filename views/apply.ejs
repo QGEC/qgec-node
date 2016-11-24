@@ -16,7 +16,9 @@
       <div class="col-md-8 col-md-offset-2 well">
         <!-- CONF. DELEGATE APPLICATION -->
         <img src="img/2017-banner.jpg" class="img-responsive">
-        <h2 class="text-center">2017 Delegate Application</h2>
+        <h2 class="text-center">2017 Delegate
+          <% if (earlyBird) { %> Early Bird <% } %> 
+          Application</h2>
         <div class="col-sm-8 col-sm-offset-2 well well-sm">
           <p class="text-center">
             Please fill out the form below to apply to become a QGEC delegate.
@@ -25,11 +27,16 @@
             We will email you at a later time to confirm your delegacy. Once you have been selected, you will be required to submit payment to reserve your spot.
           </p>
           <ul class="fa-ul">
-            <li class="includes"><i class="fa-li fa fa-credit-card"></i>Regular: $150<br>
-              <small>First 15 Applicants (Early bird): $130</small>
+            <li class="includes"><i class="fa-li fa fa-credit-card"></i>
+              <% if (earlyBird) { %>
+              Early bird: $130<br>
+              <small>(Regular: To be announced)</small>
+              <% } else { %>
+              Regular: To be announced
+              <% } %>
             </li>
             <li class="includes"><i class="fa-li fa fa-calendar"></i>February 10th ~ 12th</li>
-            <li class="includes"><i class="fa-li fa fa-gift"></i>Includes: 2 Hotel Nights stay &amp; all Meals, Conference Activities</li>
+            <li class="includes"><i class="fa-li fa fa-gift"></i>Includes: 2 Nights Hotel stay &amp; all Meals, Conference Activities</li>
           </ul>
         </div>
         <form action="/apply/delegate" id="delegate" method="POST" class="form-horizontal minor-section">
