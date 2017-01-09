@@ -12,7 +12,7 @@ router.get('/', function(req, res) {
 
     var eb = false;
 
-    if (dCount < 15) {
+    if (dCount < 12) {
       eb = true;
     }
 
