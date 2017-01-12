@@ -12,6 +12,8 @@ router.get('/', function(req, res) {
 
     var eb = false;
 
+    // should add a date logic as well, so that if it passes a certain date, no matter number of applicants, eb ends
+    // previously was 15
     if (dCount < 12) {
       eb = true;
     }
@@ -50,9 +52,9 @@ router.post('/delegate', function(req, res) {
         req.flash('applyMessage', "Seems like you've already applied. Contact us at <a href='mailto:conference@qgec.ca'>conference@qgec.ca</a> if you have any questions.");
         res.redirect('/apply');
       } else {
-        console.log("Creating delegate applicant " + req.body.firstName + " " + req.body.lastName);
+        console.log("Creating delegate applicant " + req.body.firstName + " " + req.body.lastName + " " + req.body.finAssist);
         db.countDelegateApplicants(function(err, count) {
-          db.createDelegateApplicant(req.body.firstName, req.body.lastName, req.body.email, req.body.faculty, req.body.major, req.body.year, req.body.q1, req.body.q2, count);
+          db.createDelegateApplicant(req.body.firstName, req.body.lastName, req.body.email, req.body.school, req.body.faculty, req.body.major, req.body.year, req.body.finAssist, req.body.q1, req.body.q2, count);
         });
         res.redirect('/thankyou');
       }

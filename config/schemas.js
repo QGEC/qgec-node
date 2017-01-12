@@ -23,9 +23,11 @@ var delegateSchema = mongoose.Schema({
       lowercase : true,
          unique : true  // only one application per email
   },
+  school        : String,
   faculty       : String,
   major         : String,
   year          : String,
+  finAssist     : String, // "yes" if require finAssist
   q1            : String, // 2017: how did you hear about QGEC?
   q2            : String, // 2017: what one renewable energy source has greatest potential to offset CO2?
   appOrder      : String, // first 15 applicants are early-birds

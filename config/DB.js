@@ -1,7 +1,7 @@
 var models = require('./schemas');
 
 // DELEGATE METHODS
-module.exports.createDelegateApplicant = function(submitterFirstName, submitterLastName, submitterEmail, submitterFaculty, submitterMajor, submitterYear, submitterQ1, submitterQ2, count) {
+module.exports.createDelegateApplicant = function(submitterFirstName, submitterLastName, submitterEmail, submitterSchool, submitterFaculty, submitterMajor, submitterYear, submitterFinAssist, submitterQ1, submitterQ2, count) {
 
   var startAtOne = count + 1;
 
@@ -9,9 +9,11 @@ module.exports.createDelegateApplicant = function(submitterFirstName, submitterL
     firstName: submitterFirstName,
     lastName: submitterLastName,
     email: submitterEmail,
+    school: submitterSchool,
     faculty: submitterFaculty,
     major: submitterMajor,
     year: submitterYear,
+    finAssist: submitterFinAssist,
     q1: submitterQ1,
     q2: submitterQ2,
     appOrder: startAtOne

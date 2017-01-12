@@ -13,6 +13,10 @@ $(document).ready(function() {
         required: true,
         email: true
       },
+      school: {
+        minlength: 2,
+        required: true
+      },
       faculty: {
         minlength: 2,
         required: true
