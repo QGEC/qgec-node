@@ -32,6 +32,18 @@ router.get('/', auth.connect(basic), function(req, res) {
 
 });
 
+router.post('/accept/delegate', function(req, res) {
+  console.log("Accept " + req.body.delegateID);
+  db.acceptDelegateApplicant(req.body.delegateID);
+  res.redirect('/admin');
+});
+
+router.post('/delete/delegate', function(req, res) {
+  console.log("Delete " + req.body.delegateID);
+  db.deleteDelegateApplicant(req.body.delegateID);
+  res.redirect('/admin');
+});
+
 router.post('/delete/taster', function(req, res) {
   console.log("Delete " + req.body.tasterID);
   db.deleteTasterApplicant(req.body.tasterID);

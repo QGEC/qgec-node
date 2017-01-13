@@ -45,6 +45,22 @@ p {
   font-size: 1.1em;
 }
 
+.small {
+  line-height: 1em;
+  font-size: 0.9em;
+}
+
+.tiny {
+  font-size: 0.5em;
+}
+/*
+th {
+  font-size: 0.9em;
+}
+td {
+  font-size: 0.9em;
+}*/
+
 /* Used on home page for slogan */
 h1.slogan {
   font-size: 55px; 

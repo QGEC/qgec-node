@@ -34,7 +34,11 @@ var delegateSchema = mongoose.Schema({
   accepted : {
            type : Boolean, // whether they've been invited to attend the conference or not
         default : false
-  }
+  },
+  // asked once they have been accepted as Delegates
+  allergies     : String,
+  roomates      : String,
+  overNineteen  : Boolean
 },
 {
   timestamps : true

@@ -44,6 +44,20 @@ module.exports.countDelegateApplicants = function(next) {
   });
 };
 
+module.exports.acceptDelegateApplicant = function(delegateID) {
+  models.Delegate.findOneAndUpdate({ _id: delegateID }, { accepted: true}, function(err, user) {
+    if (err) throw err;
+    console.log('Delegate Applicant ' + user + ' successfully accepted');
+  });
+};
+
+module.exports.deleteDelegateApplicant = function(delegateID) {
+  models.Delegate.findOneAndRemove({ _id: delegateID }, function(err) {
+    if (err) throw err;
+    console.log('Delegate Applicant ' + delegateID + ' successfully deleted');
+  });
+};
+
 // TASTER METHODS
 module.exports.createTasterApplicant = function(submitterFirstName, submitterLastName, submitterEmail, submitterFaculty, submitterYear, submitterTopics, submitterComments) {
   
@@ -77,10 +91,8 @@ module.exports.countTasterApplicants = function(next) {
 };
 
 module.exports.deleteTasterApplicant = function(tasterID) {
-  
   models.Taster.findOneAndRemove({ _id: tasterID }, function(err) {
     if (err) throw err;
     console.log('Taster Applicant successfully deleted');
   });
-
-}
+};
