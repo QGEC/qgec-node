@@ -1,0 +1,57 @@
+<html>
+<head>
+  <% include common/head %>
+</head>
+<body>
+  <% include common/nav %>
+  <div class="container">
+    <div class="row text-center">
+      <h1 class="page-header">You've Been Accepted!
+        <br>
+        <small class="sub-header">Provide us with further information so we can better your conference experience.</small>
+      </h1>
+    </div>
+    <div class="row minor-section">
+      <p class="text-center lead">
+        Login using the email you used for your delegate application to continue.
+      </p>
+      <% if (message.length > 0) { %>
+        <div class="alert alert-danger alert-dismissible">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <p class="text-center">
+            <%- message %>
+          </p>
+        </div>
+      <% } %>
+      <div class="col-md-4 col-md-offset-4 minor-section">
+        <form action="/delegateLogin" id="delegateLogin" method="POST" class="form-horizontal">
+          <div class="form-group">
+            <label for="email" class="col-sm-3 control-label">Email :</label>
+            <div class="col-sm-9">
+              <input id="email" type="email" class="form-control" name="email" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-group minor-section text-center">
+            <div class=" col-sm-offset-2 col-sm-8">
+              <button type="submit" class="btn btn-primary btn-block btn-lg">Login</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="row section text-center">
+      <div class="col-md-8 col-md-offset-2">
+        <p>
+          If you have forgotten the email you used to apply, or have any other questions, email us at <a href="mailto:conference@qgec.ca">conference@qgec.ca</a> or send us a <a href="https://www.facebook.com/officialQGEC/">Facebook message</a>, we're here to help.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <% include common/footer %>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.js"></script>
+  <script type="text/javascript" src="js/tastervalidate.js"></script>
+  <script type="text/javascript" src="js/delegatevalidate.js"></script>
+</body>
+</html>

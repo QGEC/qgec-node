@@ -37,8 +37,8 @@ var delegateSchema = mongoose.Schema({
   },
   // asked once they have been accepted as Delegates
   allergies     : String,
-  roomates      : String,
-  overNineteen  : Boolean
+  roommates     : String,
+  overNineteen  : String
 },
 {
   timestamps : true

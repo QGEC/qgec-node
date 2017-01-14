@@ -58,6 +58,14 @@ module.exports.deleteDelegateApplicant = function(delegateID) {
   });
 };
 
+module.exports.submitAdditionalInfo = function(delegateEmail, allergiesInfo, roommateInfo, nineteenInfo) {
+  models.Delegate.findOneAndUpdate({ email: delegateEmail }, { allergies : allergiesInfo, roommates : roommateInfo, overNineteen : nineteenInfo }, function(err, user) {
+    if (err) throw err;
+
+    console.log('Delegate Info Updated for ' + delegateEmail);
+  });
+};
+
 // TASTER METHODS
 module.exports.createTasterApplicant = function(submitterFirstName, submitterLastName, submitterEmail, submitterFaculty, submitterYear, submitterTopics, submitterComments) {
   

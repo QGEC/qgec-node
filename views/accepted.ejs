@@ -1,0 +1,92 @@
+<html>
+<head>
+  <% include common/head %>
+</head>
+<body>
+  <% include common/nav %>
+  <div class="container">
+    <div class="row text-center">
+      <h1 class="page-header">Preferences
+        <br>
+        <small class="sub-header">Provide us with further information so we can better your conference experience.</small>
+      </h1>
+    </div>
+    <div class="row minor-section">
+      <% if (message.length > 0) { %>
+        <div class="alert alert-danger alert-dismissible lead">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <%- message %>
+        </div>
+      <% } %>
+
+      <div class="col-md-8 col-md-offset-2">
+        <p class="text-center lead">Hello, <%= user.firstName %> <%= user.lastName %></p>
+        <form action="/accepted/submit" id="furtherInfo" method="POST" class="form-horizontal">
+          <div class="form-group minor-section">
+            <label for="allergies" class="col-sm-3 control-label">Do you have any food allergies or dietary restrictions? :</label>
+            <div class="col-sm-7">
+              <textarea id="allergies" name="allergies" form="furtherInfo" class="form-control" rows="4" style="resize:none" placeholder="..."><%= user.allergies %></textarea>
+            </div>
+          </div>
+          <div class="form-group minor-section">
+            <label for="roommate" class="col-sm-3 control-label">Do you have roommate requests (up to 3 people)?<br> <small>Please provide their full names, separated by commas</small> :</label>
+            <div class="col-sm-7">
+              <textarea id="rommate" name="roommate" form="furtherInfo" class="form-control" rows="3" style="resize:none" placeholder="..."><%= user.roommates %></textarea>
+            </div>
+          </div>
+          <div class="form-group minor-section">
+            <label for="nineteen" class="col-sm-3 control-label">Are you over 19 years old?</small> :</label>
+            <div class="col-sm-7 radio">
+              <label>
+                <input type="radio" name="nineteen" value="yes" checked>Yes
+              </label>
+              <br>
+              <label>
+                <input type="radio" name="nineteen" value="no" <% if (user.overNineteen == "no") { %>checked<% } %>>No
+              </label>
+            </div>
+          </div>
+          <div class="form-group minor-section">
+            <label for="resume" class="col-sm-3 control-label">(Optional) Submit Resume</small> :</label>
+            <div class="col-sm-7 radio">
+              <a href="https://www.dropbox.com/request/mCqJPrtuEX0FzKZNNuLN" target="_blank" class="btn btn-default"><i class="fa fa-dropbox" aria-hidden="true"></i> Submit Resume</a>
+            </div>
+          </div>
+          <div class="form-group section">
+            <label for="resume" class="col-sm-3 control-label">Provide Payment</small> :</label>
+            <div class="col-sm-7 radio">
+              <a href="
+                <% if (user.appOrder <= 12) { %>
+                http://engsoc.queensu.ca/get-involved/conferences/qgec-38rly-b1rd/
+                <% } else { %>
+                http://engsoc.queensu.ca/get-involved/conferences/qgec-d3l3gate-p8ym3nt/
+                <% } %>
+              " target="_blank" class="btn btn-info btn-block"><i class="fa fa-credit-card" aria-hidden="true"></i> Pay Now</a>
+              <div class="text-center tiny-section"><i>Please provide payment by ___ to secure your spot. You must provide payment in order to attend.</i></div>
+            </div>
+          </div>
+          <input type="hidden" name="email" value="<%= user.email %>">
+          <div class="form-group section text-center">
+            <div class=" col-sm-offset-2 col-sm-8">
+              <button type="submit" class="btn btn-qgec btn-block btn-lg">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="row section text-center">
+      <div class="col-md-8 col-md-offset-2">
+        <p>
+          If you have forgotten the email you used to apply, or have any other questions, email us at <a href="mailto:conference@qgec.ca">conference@qgec.ca</a> or send us a <a href="https://www.facebook.com/officialQGEC/">Facebook message</a>, we're here to help.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <% include common/footer %>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.js"></script>
+  <script type="text/javascript" src="js/tastervalidate.js"></script>
+  <script type="text/javascript" src="js/delegatevalidate.js"></script>
+</body>
+</html>

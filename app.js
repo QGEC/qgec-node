@@ -30,7 +30,11 @@ app.set('view engine', 'ejs'); // set ejs as the rendering engine
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(session({ secret: 'ilovenergyenergyenergyenergienergyenergy'}));
+app.use(session({ 
+  secret: 'ilovenergyenergyenergyenergienergyenergy',
+  resave: true,
+  saveUninitialized: true
+}));
 app.use(flash());
 
 /****************** routes ********************************/
@@ -41,6 +45,8 @@ var about = require('./routes/about')
 var apply = require('./routes/apply'); 
 var contact = require('./routes/contact');
 var thankyou = require('./routes/thankyou');
+var delegateLogin = require('./routes/delegateLogin');
+var accepted = require('./routes/accepted');
 // Previous Year Pages
 var sixteen = require('./routes/2016');
 
@@ -50,6 +56,8 @@ app.use('/about', about);
 app.use('/apply', apply);
 app.use('/contact', contact);
 app.use('/thankyou', thankyou);
+app.use('/delegateLogin', delegateLogin);
+app.use('/accepted', accepted);
 // Previous Year Pages
 app.use('/2016', sixteen);
 

@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var models = require('../config/schemas');
 
-
 var db = require("../config/DB");
 
 router.get('/', function(req, res) {
