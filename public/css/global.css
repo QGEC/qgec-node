@@ -71,6 +71,13 @@ h1.sub-slogan {
   letter-spacing: 3px;
 }
 
+/* Home page */
+.sponsors-img {
+  display: inline-block;
+  max-height: 150px;
+  padding: 15px 15px;
+}
+
 /* Components */
 
 .btn {
