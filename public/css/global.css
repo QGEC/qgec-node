@@ -405,6 +405,7 @@ li.includes {
 .speaker img {
   margin:0 auto;
   border:7px solid #fff;
+  max-height: 200px;
 }
 
 .speaker h4 { 
