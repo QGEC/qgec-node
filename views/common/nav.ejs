@@ -15,10 +15,7 @@
           <a href="/">Home</a>
         </li>
         <li class="<%= typeof about != 'undefined' ? about : '' %>">
-          <a href="/about">About</a>
-        </li>
-        <li class="<%= typeof apply != 'undefined' ? apply : '' %>">
-          <a href="/apply">Apply</a>
+          <a href="/about">Our Team</a>
         </li>
         <li class="dropdown <%= typeof previous != 'undefined' ? previous : '' %>">
           <a href="" class="dropdown-toggle" data-toggle="dropdown">Previous Years <b class="caret"></b></a>
@@ -26,10 +23,10 @@
             <li class="<%= typeof sixteen != 'undefined' ? sixteen : '' %>">
               <a href="/2016">2016</a>
             </li>
+            <li class="<%= typeof sixteen != 'undefined' ? sixteen : '' %>">
+              <a href="/2017">2017</a>
+            </li>
           </ul>
-        </li>
-        <li class="<%= typeof contact != 'undefined' ? contact : '' %>">
-          <a href="/contact">Contact</a>
         </li>
   </div>
 </nav>

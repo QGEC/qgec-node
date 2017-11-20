@@ -615,3 +615,84 @@ li.includes {
 #year-error {
   display: none !important;
 }
+
+.intro-header1 {
+  /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: url("../img/bckgnd.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.intro-message {
+    font-family: bebasNeue, "Times New Roman", serif;
+    position: relative;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+.intro-divider {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.intro-message > h3 {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}
+
+.intro-message {
+    font-family: bebasNeue, "Times New Roman", serif;
+    position: relative;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+.intro-message > h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 5em;
+}
+
+.intro-message > h3 {
+    margin-top: 100px;
+    bottom: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 3em;
+}
+
+.socialmedia{
+  display: block;
+  margin: auto;
+}
+
+.person1{
+      border: 10px solid transparent;
+      margin-bottom: 25px;
+      opacity: 0.9;
+
+}
+.person1:hover{
+      border-color: white;
+}
+
+.person{
+      border: 10px solid transparent;
+      margin-bottom: 25px;
+      opacity: 0.9;
+
+}
+
+.person:hover{
+  border-color: white;
+}
+
+.icons{
+  text-decoration: none;
+  color: black;
+}

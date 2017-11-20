@@ -42,24 +42,19 @@ app.use(flash());
 var admin = require('./routes/admin');
 var index = require('./routes/index');
 var about = require('./routes/about')
-var apply = require('./routes/apply'); 
-var contact = require('./routes/contact');
-var thankyou = require('./routes/thankyou');
-var delegateLogin = require('./routes/delegateLogin');
-var accepted = require('./routes/accepted');
+
+
 // Previous Year Pages
 var sixteen = require('./routes/2016');
+var seventeen = require('./routes/2017');
 
 app.use('/admin', admin);
 app.use('/', index);
 app.use('/about', about);
-app.use('/apply', apply);
-app.use('/contact', contact);
-app.use('/thankyou', thankyou);
-app.use('/delegateLogin', delegateLogin);
-app.use('/accepted', accepted);
+
 // Previous Year Pages
 app.use('/2016', sixteen);
+app.use('/2017', seventeen);
 
 /* 404 Page
 -------------------------------------------------------- */

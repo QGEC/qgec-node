@@ -3,95 +3,64 @@
   <% include common/head %>
 </head>
 <body>
-  <script>
-      // 2. This code loads the IFrame Player API code asynchronously.
-      var tag = document.createElement('script');
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '600px',
-          width: '100%',
-          videoId: 'V-woA2uykkM',
-          playerVars: {
-            'rel': 0,
-            'showinfo': 0
-          },
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      }
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        event.target.setVolume(0);
-        event.target.playVideo();
-      }
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      var done = false;
-      function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-    //      setTimeout(stopVideo, 6000);
-                  done = true;
-        }
-      }
-  </script>
+
   <% include common/nav %>
 
-  <% // include index/head-carousel %>
-
-  <div class="container-fluid">
+<div class="intro-header1">
+  <div class="container">
     <div class="row">
-      <div id="player"></div>
+      <div class="col-lg-12">
+        <div class="intro-message">
+          <h1>Queen's Global Energy Conference</h1>
+          <h3>Seeking A New Energy Equilibrium</h3>
+          <h2>January 26th - 28th, 2018</h2>
+          <hr class="intro-divider">
+        </div>
+      </div>
     </div>
   </div>
+</div>
 
-<!--   <div class="container well intro-section">
+  <div class="container well intro-section">
     <div class="row text-center">
       <div class="col-lg-8 col-lg-offset-2">
-        <h1 class="page-header sub-slogan">2017 Delegate Applications are now Open!</h1>
-        <h2>Conference Details: <br><small>Friday to Sunday</small><br>February 10th ~ 12th<br><small>Downtown Kingston, Ontario</small></h2>
+        <h1 class="page-header sub-slogan">2018 Delegate Applications are now Open!</h1>
+        <h2>Conference Details: <br><small>Friday to Sunday</small><br>January 26th ~ 28th<br><small>Holiday Inn, Kingston, Ontario</small></h2>
       </div>
     </div>
     <div class="row text-center minor-section">
       <div class="col-sm-4 col-sm-offset-4">
-        <a href="/apply" class="btn btn-qgec btn-block btn-lg">Apply Now</a>
+        <a target="_blank" href="https://qgec.typeform.com/to/wHjnc2" class="btn btn-qgec btn-block btn-lg">Apply Now</a>
       </div>
-    </div>
-    <div class="minor-section"></div>
-  </div> -->
+    </div> 
+  </div> 
 
-  <div class="container">
+<div class="container">
     <div class="row text-center intro-section">
       <div class="col-lg-12">
-<!--         <h1>
-          February 10 - 12
-          <br>
-          2017
-        </h1> -->
         <h1 class="page-header slogan">
-          Embracing a New Age of Innovation
+          Seeking An Energy Equilibrium
         </h1>
-        <h2><small>Friday to Sunday</small><br>February 10th ~ 12th<br><small>Downtown Kingston, Ontario</small></h2>
-      </div>
-      <div class="col-md-6 col-md-offset-3">
-        <p class="lead">
-          This year’s conference theme, “Embracing a New Age of Innovation” focuses on providing a holistic view of the innovation and change going on in the industry today and tomorrow.
-        </p>
-        <p>
-          The current energy environment is in a period of radical change. The energy sector must take a pragmatic approach to innovate within traditional sectors while expanding the reach of renewable energy. With countries seeking energy independence, new technologies are being developed to disrupt and shape the future of the energy industry. A New Age of Energy Innovation is being ushered in to explore new methods in traditional energy landscapes and emerging alternative resources, while balancing economic prosperity with environmental sustainability. There is a need now, more than ever, to attract bright young minds to be at the forefront of this disruption.
-        </p>
+        <h2><small>Friday to Sunday</small><br>January 26th ~ 28th<br><small>Holiday Inn, Kingston, Ontario</small></h2>
       </div>
     </div>
-  </div>
+    <div class="container text-center">
+      <div class="col-sm-4">  
+        <i class="fa fa-university fa-4x" aria-hidden="true"></i> 
+        <p style="margin-top: 20px;">Engage delegates, speakers and sponsors through various interactive workshops, question panels and networking sessions.</p> 
+      </div>
 
+      <div class="col-sm-4">
+        <i class="fa fa-bolt fa-4x" aria-hidden="true"></i>
+        <p style="margin-top: 20px;">An environment where the industry and innovators may connect and share meaningful conversation about the exciting future of the energy sector.</p> 
+      </div>
+  
+      <div class="col-sm-4">
+        <i class="fa fa-cogs fa-4x" aria-hidden="true"></i>
+        <p style="margin-top: 20px;">Inform delegates about the ever-evolving energy industry through interactions with current industry leaders, inspiring them to generate their own ideas and become the leaders of tomorrow.</p> 
+      </div>
+    </div>
+</div>
   <div class="container-fluid emphasis delegates section">
     <div class="row text-center">
       <h1>Delegates</h1>
@@ -110,8 +79,14 @@
         </p>
       </div>
     </div>
-    <% include index/quotes %>
-    <div class="row text-center">
+    <!--
+    <div class="row minor-section">
+      <div class="col-sm-4 col-sm-offset-4">
+        <a href="#" class="btn btn-qgec btn-lg btn-block">Apply Now</a>
+      </div>
+    </div> -->
+
+   <!-- <div class="row text-center">
       <h3>This Year's Schedule:</h3>
       <img src="img/schedule.png" class="img-responsive center-block">
     </div>
@@ -124,9 +99,9 @@
       <div class="col-sm-4 col-sm-offset-4">
         <a href="/apply" class="btn btn-qgec btn-lg btn-block">Apply Now</a>
       </div>
-    </div>
+    </div> -->
   </div>
-
+<!--
   <div class="container-fluid emphasis speakers section">
     <div class="row text-center">
       <h1>Speakers</h1>
@@ -265,13 +240,14 @@
       </div>
     </div> -->
     <!-- Leave up during down times of conference -->
-<!--     <div class="row text-center minor-section">
+    <div class="container">
+     <div class="row text-center minor-section">
       <p class="lead">
-        If you're an industry leader and want to participate as a speaker, please <a href="/contact">contact</a> us.
+        If you're an industry leader and want to participate as a speaker or if you're interested in becoming a partner, please <a href="mailto:qgec@engsoc.queensu.ca">contact</a> us.
       </p>
-    </div> -->
-  </div>
-
+    </div>
+    </div>
+<!--  </div>
   <div class="container-fluid emphasis partners section">
     <div class="row text-center">
       <h1>Partners</h1>
@@ -334,16 +310,18 @@
         <img src="img/logos/2017/soylent.png" class="img-responsive sponsors-img">
       </div>
     </div>
-
+-->
+<!--
     <div class="row text-center minor-section">
       <p class="lead">
         If you're interested in becoming a partner for a great cause, please <a href="/contact">contact</a> us.
       </p>
     </div>
   </div>
-
+-->
   
   <div class="container">
+    <!--
     <div class="row major-section">
       <div class="col-lg-12">
         <h1 class="page-header text-center">Mainstream Renewable Energy Technologies</h1>
@@ -403,7 +381,7 @@
         </div>
       </div>
     </div>
-
+-->
     <hr>
 
     <div class="well">
@@ -417,8 +395,7 @@
           </p>
         </div>
         <div class="col-md-4">
-          <a class="btn btn-lg btn-qgec btn-block" href="/apply">Apply Now</a>
-          <a class="btn btn-lg btn-default btn-block" href="/contact">Contact</a>
+          <a target="_blank" href="https://qgec.typeform.com/to/wHjnc2" class="btn btn-lg btn-qgec btn-block">Apply Now</a>
         </div>
       </div>
     </div>
